@@ -23,16 +23,18 @@ router.get('/getOrders',async (req,res)=>{
     }
 })
 
-        //Read by id
-router.get('/getOrder/:id',(req,res)=>{
-    const id = req.params.id;
-    Order.findById(id).then((order)=>{
+        //Read by Date
+router.get('/getOrder/:deliveryDate',(req,res)=>{
+    
+    const deliveryDate = req.params.deliveryDate;
+    console.log(res.deliveryDate);
+    Order.find({ deliveryDate}).then((order)=>{
         if(!order){
             return res.status(404).send();
         }
         res.send(order);
     }).catch((e)=>{
-        res.status(500).send();
+        res.status(500).send(e);
     })
 });
 
