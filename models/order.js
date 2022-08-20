@@ -8,7 +8,7 @@ const orderSchema = new mongoose.Schema({
     },
     milkQuantityInLitres:{
         type:Number,
-        require:true
+        require:true,
     },
     pricePerLitre:{
         type:Number,
