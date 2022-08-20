@@ -16,7 +16,7 @@ const orderSchema = new mongoose.Schema({
     },
     AnimalMilkType:{
         type:String,
-        require:trusted,
+        require:true,
     },
     shippingAddress:{
         type:String,
@@ -27,7 +27,7 @@ const orderSchema = new mongoose.Schema({
         require:true
     },
     deliveryDate:{
-        type:Date,
+        type:String,
         require:true
     },
     orderStatus:{
