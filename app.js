@@ -1,12 +1,13 @@
 const express = require('express');
 require('./db/mongoose.js');
-// const userRouter = require('./routers/user');
+const orderRouter = require('./routers/order');
 // const taskRouter = require('./routers/task');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(orderRouter);
 
 
 app.listen(port,()=>{
